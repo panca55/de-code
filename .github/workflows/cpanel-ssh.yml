@@ -3,7 +3,7 @@ name: Deploy to cPanel via SSH
 on:
   push:
     branches:
-      - main # Atau branch yang ingin Anda deploy
+      - master # Atau branch yang ingin Anda deploy
 
 jobs:
   deploy:
@@ -19,6 +19,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.CPANEL_SSH_USERNAME }}@${{ secrets.CPANEL_SSH_HOST }} "
             cd /path/to/your/webroot; # Ganti dengan path webroot Anda
-            git pull origin main;      # Atau branch yang sesuai
+            git pull origin master;      # Atau branch yang sesuai
             # Tambahkan perintah build atau migrasi lainnya jika perlu
           "
